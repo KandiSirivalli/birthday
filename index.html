@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vishnu's Birthday</title>
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #fef6ff;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        transition: background 0.5s;
+    }
+
+    .title {
+        font-size: clamp(24px, 5vw, 32px);
+        font-weight: bold;
+        color: #ff4d88;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: clamp(16px, 4vw, 20px);
+        color: #444;
+        margin-bottom: 30px;
+    }
+
+    .calendar {
+        max-width: 90%;
+        width: 350px;
+        margin: auto;
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+        transition: all 0.5s;
+    }
+
+    .calendar h2 {
+        margin: 0 0 20px 0;
+        color: #333;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 18px;
+    }
+
+    th {
+        padding: 10px 0;
+        color: #ff4d88;
+    }
+
+    td {
+        padding: 10px 0;
+        border-radius: 50%;
+        transition: transform 0.2s, background 0.2s;
+    }
+
+    td:hover {
+        background: #ffe6f0;
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+
+    .highlight {
+        background: #ff4d88;
+        color: white;
+        font-weight: bold;
+        border-radius: 50%;
+    }
+
+    .decor {
+        font-size: 50px;
+        margin-top: 20px;
+    }
+
+    .message-page {
+        display: none;
+        max-width: 90%;
+        margin: auto;
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+        font-size: 18px;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* Button to go back */
+    .back-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        background: #ff4d88;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="title">🎂 Vishnu Turns 21!</div>
+<div class="subtitle">Celebrating on December 14, 2025 🎉</div>
+
+<!-- Calendar Page -->
+<div class="calendar" id="calendarPage">
+    <h2>December 2025</h2>
+    <table>
+        <tr>
+            <th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thu</th> <th>Fri</th> <th>Sat</th>
+        </tr>
+
+        <tr>
+            <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr>
+            <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+        </tr>
+        <tr>
+            <td class="highlight" onclick="showMessage()">14</td>
+            <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+        </tr>
+        <tr>
+            <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
+        </tr>
+        <tr>
+            <td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td>
+        </tr>
+    </table>
+</div>
+
+<div class="decor">🎂 🎈 🎉 🥳</div>
+
+<!-- Message Page -->
+<div class="message-page" id="messagePage">
+    <p>
+        You are one of my favorite people. Thank you for being my friend, for listening to all my nonsense, for patiently watching my nature photos, and for hearing me out without saying much. I don’t know exactly how you feel or what you think about me, but still, you hold a special place in my heart. After my family, among my friends, you are truly one of my favorites and one of the most important people to me. You are always in my prayers. I hope you have an amazing day, a wonderful year, and countless great moments every day.
+    </p>
+    <button class="back-btn" onclick="backToCalendar()">Back to Calendar</button>
+</div>
+
+<script>
+    function showMessage() {
+        document.getElementById('calendarPage').style.display = 'none';
+        document.querySelector('.decor').style.display = 'none';
+        document.getElementById('messagePage').style.display = 'block';
+        document.body.style.background = "#fff0f6"; // optional theme change
+    }
+
+    function backToCalendar() {
+        document.getElementById('messagePage').style.display = 'none';
+        document.getElementById('calendarPage').style.display = 'block';
+        document.querySelector('.decor').style.display = 'block';
+        document.body.style.background = "#fef6ff";
+    }
+</script>
+
+</body>
+</html>
